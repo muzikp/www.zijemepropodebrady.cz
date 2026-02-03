@@ -1,0 +1,119 @@
+[
+  {
+    "id": "0",
+    "krestniJmeno": "Lucie",
+    "prijmeni": "Kurková",
+    "titulPred": "Ing.",
+    "titulZa": "",
+    "povolani": "Kandidátka na starostku",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/kurkova.jpg"
+  },
+  {
+    "id": "1",
+    "krestniJmeno": "Jozef",
+    "prijmeni": "Ďurčanský",
+    "titulPred": "Ing.",
+    "titulZa": "",
+    "povolani": "Poděbradský politik, bývalý starosta Poděbrad",
+    "email": "jan.novak@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/durcansky.jpg"
+  },
+  {
+    "id": "2",
+    "krestniJmeno": "Pavel",
+    "prijmeni": "Louda",    
+    "povolani": "Podnikatel a vizionář",
+    "email": "eva.svobodova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/louda.jpg"
+  },
+  {
+    "id": "3",
+    "krestniJmeno": "Petr",
+    "prijmeni": "Hercik",
+    "titulPred": "",
+    "titulZa": "",
+    "povolani": "???",
+    "email": "petr.dvorak@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/hercik.jpg"
+  },
+  {
+    "id": "4",
+    "krestniJmeno": "Jaromír",
+    "prijmeni": "Žatečka",    
+    "titulZa": "",
+    "povolani": "Důchodce",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/zatecka.jpg"
+  },
+  {
+    "id": "5",
+    "krestniJmeno": "Daniela",
+    "prijmeni": "Potůčková",
+    "titulPred": "Mgr.",
+    "titulZa": "",
+    "povolani": "Advokátka",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/potuckova.jpg"
+  },
+  {
+    "id": "6",
+    "krestniJmeno": "Jiří",
+    "prijmeni": "Vlasák",
+    "titulPred": "Ing.",
+    "titulZa": "",
+    "povolani": "Velkouzenář & rocker",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/vlasak.jpg"
+  },
+  {
+    "id": "7",
+    "krestniJmeno": "Teraza",
+    "prijmeni": "Horníčková",
+    "titulPred": "Ing.",
+    "titulZa": "",
+    "povolani": "Obchodní manažerka",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/hornickova.jpg"
+  },
+  {
+    "id": "9",
+    "krestniJmeno": "???",
+    "prijmeni": "Milan",
+    "titulPred": "",
+    "titulZa": "",
+    "povolani": "???",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/milan.jpg"
+  },
+  {
+    "id": "10",
+    "krestniJmeno": "Jan",
+    "prijmeni": "Pardubský",
+    "titulPred": "Mgr.",
+    "titulZa": "",
+    "povolani": "Velitel stanice HZS",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/pardubsky.jpg"
+  },
+  {
+    "id": "11",
+    "krestniJmeno": "???",
+    "prijmeni": "Svobodobá",
+    "titulPred": "",
+    "titulZa": "",
+    "povolani": "???",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/svobodova.jpg"
+  },
+  {
+    "id": "12",
+    "krestniJmeno": "Martin",
+    "prijmeni": "Vobr",
+    "titulPred": "Ing.",
+    "titulZa": "",
+    "povolani": "Projektový manažer",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/vobr.jpg"
+  }
+]
