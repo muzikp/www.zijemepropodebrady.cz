@@ -1,6 +1,6 @@
 [
   {
-    "id": "0",
+    "id": 6,
     "krestniJmeno": "Lucie",
     "prijmeni": "Kurková",
     "titulPred": "Ing.",
@@ -10,7 +10,7 @@
     "avatarFilePath": "/avatars/kurkova.jpg"
   },
   {
-    "id": "1",
+    "id": 9,
     "krestniJmeno": "Jozef",
     "prijmeni": "Ďurčanský",
     "titulPred": "Ing.",
@@ -20,7 +20,7 @@
     "avatarFilePath": "/avatars/durcansky.jpg"
   },
   {
-    "id": "2",
+    "id": 1,
     "krestniJmeno": "Pavel",
     "prijmeni": "Louda",    
     "povolani": "Podnikatel a vizionář",
@@ -28,7 +28,7 @@
     "avatarFilePath": "/avatars/louda.jpg"
   },
   {
-    "id": "3",
+    "id": 5,
     "krestniJmeno": "Petr",
     "prijmeni": "Hercik",
     "titulPred": "",
@@ -38,7 +38,7 @@
     "avatarFilePath": "/avatars/hercik.jpg"
   },
   {
-    "id": "4",
+    "id": 12,
     "krestniJmeno": "Jaromír",
     "prijmeni": "Žatečka",    
     "titulZa": "",
@@ -47,7 +47,7 @@
     "avatarFilePath": "/avatars/zatecka.jpg"
   },
   {
-    "id": "5",
+    "id": 13,
     "krestniJmeno": "Daniela",
     "prijmeni": "Potůčková",
     "titulPred": "Mgr.",
@@ -57,7 +57,7 @@
     "avatarFilePath": "/avatars/potuckova.jpg"
   },
   {
-    "id": "6",
+    "id": 3,
     "krestniJmeno": "Jiří",
     "prijmeni": "Vlasák",
     "titulPred": "Ing.",
@@ -67,7 +67,7 @@
     "avatarFilePath": "/avatars/vlasak.jpg"
   },
   {
-    "id": "7",
+    "id": 2,
     "krestniJmeno": "Teraza",
     "prijmeni": "Horníčková",
     "titulPred": "Ing.",
@@ -77,7 +77,7 @@
     "avatarFilePath": "/avatars/hornickova.jpg"
   },
   {
-    "id": "9",
+    "id": 997,
     "krestniJmeno": "???",
     "prijmeni": "Milan",
     "titulPred": "",
@@ -87,7 +87,7 @@
     "avatarFilePath": "/avatars/milan.jpg"
   },
   {
-    "id": "10",
+    "id": 998,
     "krestniJmeno": "Jan",
     "prijmeni": "Pardubský",
     "titulPred": "Mgr.",
@@ -97,7 +97,7 @@
     "avatarFilePath": "/avatars/pardubsky.jpg"
   },
   {
-    "id": "11",
+    "id": 999,
     "krestniJmeno": "???",
     "prijmeni": "Svobodobá",
     "titulPred": "",
@@ -107,7 +107,7 @@
     "avatarFilePath": "/avatars/svobodova.jpg"
   },
   {
-    "id": "12",
+    "id": 15,
     "krestniJmeno": "Martin",
     "prijmeni": "Vobr",
     "titulPred": "Ing.",

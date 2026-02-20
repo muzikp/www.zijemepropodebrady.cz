@@ -1,6 +1,13 @@
 <script>
 	import teamData from '$lib/data/team.json';
 
+	// Seřazení členů týmu podle ID vzestupně
+	const sortedTeamData = [...teamData].sort((a, b) => {
+		const idA = parseInt(a.id);
+		const idB = parseInt(b.id);
+		return idA - idB;
+	});
+
 	let formData = {
 		email: '',
 		firstName: '',
@@ -132,7 +139,7 @@
 	<div class="container">
 		<h2>Náš tým</h2>
 		<div class="team-grid">
-			{#each teamData as member}
+			{#each sortedTeamData as member}
 				<div class="team-member">
 					<div class="member-photo">
 						<img src={member.avatarFilePath} alt="{member.krestniJmeno} {member.prijmeni}" />
