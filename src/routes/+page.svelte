@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import teamData from '$lib/data/team.json';
 
 	// Seřazení členů týmu podle ID vzestupně
@@ -98,7 +99,7 @@
 <svelte:head>
 	<title>Žijeme pro Poděbrady</title>
 	<meta name="description" content="Žijeme pro Poděbrady - společně pro lepší budoucnost našeho města" />
-	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
 <!-- Navbar -->
@@ -106,8 +107,8 @@
 	<div class="container">
 		<div class="nav-content">
 			<div class="nav-logo">
-				<a href="/">
-					<img src="/logo.png" alt="Žijeme pro Poděbrady" />
+				<a href="{base}/">
+					<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" />
 				</a>
 			</div>
 			<div class="nav-right">
@@ -130,7 +131,7 @@
 <!-- Hero Section -->
 <section class="hero">
 	<div class="hero-content">
-		<img src="/logo.png" alt="Žijeme pro Poděbrady" class="hero-logo" />
+		<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" class="hero-logo" />
 	</div>
 </section>
 
@@ -142,7 +143,7 @@
 			{#each sortedTeamData as member}
 				<div class="team-member">
 					<div class="member-photo">
-						<img src={member.avatarFilePath} alt="{member.krestniJmeno} {member.prijmeni}" />
+						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
 					</div>
 					<h3>
 						{#if member.titulPred}{member.titulPred} {/if}
