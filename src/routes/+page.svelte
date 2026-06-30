@@ -135,21 +135,46 @@
 	</div>
 </section>
 
+<!-- Priorities Section -->
+<section class="priorities">
+	<div class="container">
+		<h2>NAŠE PRIORITY</h2>
+		<ul class="priority-list">
+			<li>
+				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+				<span>Vyřešíme parkování a bude pro občany města ZDARMA</span>
+			</li>
+			<li>
+				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+				<span>Nová POLIKLINIKA a centralizování lékařské péče pod jednu střechu</span>
+			</li>
+			<li>
+				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+				<span>ČISTÉ MĚSTO každý den!</span>
+			</li>
+			<li>
+				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+				<span>Fungující úřad jako servis pro občany.</span>
+			</li>
+			<li>
+				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+				<span>10.000.000 Kč pro sportovní kluby.</span>
+			</li>
+		</ul>
+	</div>
+</section>
+
 <!-- Team Section -->
 <section class="team" id="tym">
 	<div class="container">
-		<h2>Náš tým</h2>
+		<h2>NÁŠ TÝM PRO PODĚBRADY</h2>
 		<div class="team-grid">
 			{#each sortedTeamData as member}
 				<div class="team-member">
 					<div class="member-photo">
 						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
 					</div>
-					<h3>
-						{#if member.titulPred}{member.titulPred} {/if}
-						{member.krestniJmeno} {member.prijmeni}
-						{#if member.titulZa}, {member.titulZa}{/if}
-					</h3>
+					<h3>{member.krestniJmeno} {member.prijmeni}</h3>
 					<p class="member-profession">{member.povolani}</p>
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
@@ -377,6 +402,12 @@
 		padding: 80px 0;
 	}
 
+	.priorities {
+		background-color: #ffb240;
+		padding: 20px 0 80px;
+	}
+
+	.priorities h2,
 	.team h2 {
 		text-align: center;
 		color: var(--dark-gray-color);
@@ -384,6 +415,40 @@
 		font-size: 2.5rem;
 		font-weight: 700;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+	}
+
+	.priority-list {
+		list-style: none;
+		max-width: 920px;
+		margin: 0 auto;
+		padding: 0;
+		display: grid;
+		gap: 1rem;
+	}
+
+	.priority-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.9rem;
+		padding: 1rem 1.25rem;
+		background: rgba(255, 255, 255, 0.18);
+		border: 1px solid rgba(33, 37, 41, 0.14);
+		border-radius: 16px;
+		color: var(--dark-gray-color);
+		font-size: 1.1rem;
+		line-height: 1.45;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	}
+
+	.priority-list img {
+		width: 1.2rem;
+		height: 1.2rem;
+		flex: 0 0 auto;
+		margin-top: 0.2rem;
+	}
+
+	.priority-list span {
+		display: block;
 	}
 
 	.team-grid {
@@ -605,8 +670,14 @@
 		}
 
 		.team h2,
+		.priorities h2,
 		.contact h2 {
 			font-size: 2rem;
+		}
+
+		.priority-list li {
+			font-size: 1rem;
+			padding: 0.9rem 1rem;
 		}
 
 		.team-grid {
@@ -631,6 +702,10 @@
 
 		.hero-logo {
 			width: 90vw;
+		}
+
+		.priorities {
+			padding: 10px 0 60px;
 		}
 
 		.contact h2 {

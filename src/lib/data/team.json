@@ -5,7 +5,7 @@
     "prijmeni": "Kurková",
     "titulPred": "Ing.",
     "titulZa": "",
-    "povolani": "Kandidátka na starostku",
+    "povolani": "Ředitelka městského kulturního centra",
     "email": "marie.novakova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/kurkova.jpg"
   },
@@ -23,7 +23,7 @@
     "id": 1,
     "krestniJmeno": "Pavel",
     "prijmeni": "Louda",    
-    "povolani": "Podnikatel a vizionář",
+    "povolani": "Podnikatel a radní města",
     "email": "eva.svobodova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/louda.jpg"
   },
@@ -33,7 +33,7 @@
     "prijmeni": "Hercik",
     "titulPred": "",
     "titulZa": "",
-    "povolani": "???",
+    "povolani": "Zástupce ředitele a učitel na Eko-gymnáziu a zastupitel města",
     "email": "petr.dvorak@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/hercik.jpg"
   },
@@ -62,28 +62,28 @@
     "prijmeni": "Vlasák",
     "titulPred": "Ing.",
     "titulZa": "",
-    "povolani": "Velkouzenář & rocker",
+    "povolani": "Podnikatel v potravinářství",
     "email": "marie.novakova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/vlasak.jpg"
   },
   {
-    "id": 2,
-    "krestniJmeno": "Teraza",
+    "id": 0,
+    "krestniJmeno": "Tereza",
     "prijmeni": "Horníčková",
     "titulPred": "Ing.",
     "titulZa": "",
-    "povolani": "Obchodní manažerka",
+    "povolani": "Obchodní manažerka ve zdravotnictví",
     "email": "marie.novakova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/hornickova.jpg"
   },
   {
     "id": 997,
-    "krestniJmeno": "???",
-    "prijmeni": "Milan",
+    "krestniJmeno": "Milan",
+    "prijmeni": "Chromý",
     "titulPred": "",
     "titulZa": "",
-    "povolani": "???",
-    "email": "marie.novakova@zijemepropodebrady.cz",
+    "povolani": "Ekonom v IT",
+    "email": "milan.chromy@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/milan.jpg"
   },
   {
@@ -98,11 +98,11 @@
   },
   {
     "id": 999,
-    "krestniJmeno": "???",
+    "krestniJmeno": "Eva",
     "prijmeni": "Svobodobá",
     "titulPred": "",
     "titulZa": "",
-    "povolani": "???",
+    "povolani": "Důchodkyně",
     "email": "marie.novakova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/svobodova.jpg"
   },
@@ -115,5 +115,15 @@
     "povolani": "Projektový manažer",
     "email": "marie.novakova@zijemepropodebrady.cz",
     "avatarFilePath": "/avatars/vobr.jpg"
+  },
+  {
+    "id": 15,
+    "krestniJmeno": "Jaroslav",
+    "prijmeni": "Votava",
+    "titulPred": null,
+    "titulZa": "",
+    "povolani": "Podnikatel",
+    "email": "marie.novakova@zijemepropodebrady.cz",
+    "avatarFilePath": "/avatars/votava.png"
   }
 ]
