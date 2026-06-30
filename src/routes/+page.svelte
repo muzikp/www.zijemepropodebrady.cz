@@ -136,13 +136,13 @@
 </section>
 
 <!-- Priorities Section -->
-<section class="priorities">
-	<div class="container">
-		<h2>NAŠE PRIORITY</h2>
+	<section class="priorities">
+		<div class="container">
+			<h2>NAŠE PRIORITY</h2>
 		<ul class="priority-list">
 			<li>
 				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>Vyřešíme parkování a bude pro občany města ZDARMA</span>
+				<span>Vyřešíme parkování a bude pro občany města ZDARMA!</span>
 			</li>
 			<li>
 				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
@@ -175,7 +175,15 @@
 						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
 					</div>
 					<h3>{member.krestniJmeno} {member.prijmeni}</h3>
-					<p class="member-profession">{member.povolani}</p>
+					<p class="member-profession">
+						{#if member.krestniJmeno === 'Tereza' && member.prijmeni === 'Horníčková'}
+							Obchodní manažerka ve zdravotnictví a kandidátka na starostku
+						{:else if member.krestniJmeno === 'Petr' && member.prijmeni === 'Hercik'}
+							Zástupce ředitele a učitel na EKO gymnáziu a zastupitel města
+						{:else}
+							{member.povolani}
+						{/if}
+					</p>
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
 					{/if}
@@ -357,7 +365,7 @@
 	/* Hero Section */
 	.hero {
 		background-color: #ffb240;
-		padding: 150px 20px 100px;
+		padding: 150px 20px 50px;
 		text-align: center;
 	}
 
@@ -404,7 +412,7 @@
 
 	.priorities {
 		background-color: #ffb240;
-		padding: 20px 0 80px;
+		padding: 0 0 80px;
 	}
 
 	.priorities h2,
@@ -508,7 +516,7 @@
 		font-size: 2rem;
 		font-weight: 600;
 		color: var(--dark-gray-color);
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
 	}
 
@@ -662,7 +670,7 @@
 		}
 
 		.hero {
-			padding: 120px 20px 80px;
+			padding: 120px 20px 40px;
 		}
 
 		.hero-logo {
@@ -705,7 +713,7 @@
 		}
 
 		.priorities {
-			padding: 10px 0 60px;
+			padding: 0 0 60px;
 		}
 
 		.contact h2 {
