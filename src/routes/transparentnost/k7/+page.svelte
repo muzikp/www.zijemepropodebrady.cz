@@ -8,7 +8,7 @@
 		},
 		{
 			label: 'Web zadavatele',
-			value: 'https://zijemepropodebrady.cz'
+			value: 'www.zijemepropodebrady.cz'
 		},
 		{
 			label: 'IČ',
@@ -16,15 +16,15 @@
 		},
 		{
 			label: 'Doba trvání kampaně',
-			value: '12. 7. 2026 - 26. 7. 2026'
+			value: '8. 7. 2026 - 20. 9. 2026'
 		},
 		{
 			label: 'Cena za reklamu',
-			value: '10 310 Kč'
+			value: '78 071 Kč'
 		},
 		{
 			label: 'Cena za kampaň',
-			value: '10 310 Kč'
+			value: '78 071 Kč'
 		},
 		{
 			label: 'Původ financí',
@@ -32,7 +32,7 @@
 		},
 		{
 			label: 'Metodika výpočtu ceny',
-			value: 'Cena je součtem částek za tisk a pronájem reklamní plochy, ceny jsou uvedeny vč. DPH.'
+			value: 'Cena je součtem částek za tisk a pronájem reklamní plochy, ceny jsou uvedeny bez. DPH.'
 		},
 		{
 			label: 'Souvislost sdělení',

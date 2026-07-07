@@ -8,7 +8,7 @@
 		},
 		{
 			label: 'Web zadavatele',
-			value: 'https://zijemepropodebrady.cz'
+			value: 'www.zijemepropodebrady.cz'
 		},
 		{
 			label: 'IČ',
