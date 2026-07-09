@@ -146,7 +146,7 @@
 			</li>
 			<li>
 				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>Nová POLIKLINIKA a centralizování lékařské péče pod jednu střechu</span>
+				<span>Nová POLIKLINIKA a centralizování lékařské péče pod jednu střechu.</span>
 			</li>
 			<li>
 				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
