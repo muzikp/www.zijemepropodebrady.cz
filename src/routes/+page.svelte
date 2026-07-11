@@ -114,6 +114,8 @@
 			<div class="nav-right">
 				<ul class="nav-links">
 					<li><a href="#tym">Tým</a></li>
+					<li><a href="{base}/blog">Blog</a></li>
+					<li><a href="{base}/volebni-noviny">Volební noviny</a></li>
 					<li><a href="#kontakt">Kontakt</a></li>
 				</ul>
 				<div class="nav-social">
@@ -322,13 +324,17 @@
 	.nav-right {
 		display: flex;
 		align-items: center;
-		gap: 2rem;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		justify-content: flex-end;
 	}
 
 	.nav-links {
 		display: flex;
 		list-style: none;
-		gap: 2rem;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		justify-content: flex-end;
 		margin: 0;
 		padding: 0;
 	}
@@ -662,7 +668,7 @@
 		}
 
 		.nav-links {
-			gap: 1rem;
+			gap: 0.85rem;
 		}
 
 		.nav-links a {
@@ -701,7 +707,7 @@
 
 	@media (max-width: 576px) {
 		.nav-links {
-			gap: 0.75rem;
+			gap: 0.7rem;
 		}
 
 		.nav-links a {
