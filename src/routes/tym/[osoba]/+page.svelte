@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-import NavBar from '$lib/components/NavBar.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
 	export let data;
 
 	function getTitle(member) {
@@ -155,3 +155,6 @@ import NavBar from '$lib/components/NavBar.svelte';
 		}
 	}
 </style>
+
+
+

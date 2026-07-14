@@ -7,14 +7,6 @@ export function getTeamMemberPath(member) {
 }
 
 export function getTeamMemberProfession(member) {
-	if (member.krestniJmeno === 'Tereza' && member.prijmeni === 'HornĂ­ÄŤkovĂˇ') {
-		return 'ObchodnĂ­ manaĹľerka ve zdravotnictvĂ­ a kandidĂˇtka na starostku';
-	}
-
-	if (member.krestniJmeno === 'Petr' && member.prijmeni === 'Hercik') {
-		return 'ZĂˇstupce Ĺ™editele a uÄŤitel na EKO gymnĂˇziu a zastupitel mÄ›sta';
-	}
-
 	return member.povolani;
 }
 

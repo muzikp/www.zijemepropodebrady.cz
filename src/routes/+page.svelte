@@ -1,7 +1,8 @@
 <script>
 	import { base } from '$app/paths';
-import NavBar from '$lib/components/NavBar.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
 	import teamData from '$lib/data/team.json';
+	import { getTeamMemberPath } from '$lib/team';
 
 	// Seřazení členů týmu podle ID vzestupně
 	const sortedTeamData = [...teamData].sort((a, b) => {
@@ -152,15 +153,7 @@ import NavBar from '$lib/components/NavBar.svelte';
 						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
 					</div>
 					<h3>{member.krestniJmeno} {member.prijmeni}</h3>
-					<p class="member-profession">
-						{#if member.krestniJmeno === 'Tereza' && member.prijmeni === 'Horníčková'}
-							Obchodní manažerka ve zdravotnictví a kandidátka na starostku
-						{:else if member.krestniJmeno === 'Petr' && member.prijmeni === 'Hercik'}
-							Zástupce ředitele a učitel na EKO gymnáziu a zastupitel města
-						{:else}
-							{member.povolani}
-						{/if}
-					</p>
+					<p class="member-profession">{member.povolani}</p>
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
 					{/if}
@@ -616,3 +609,4 @@ import NavBar from '$lib/components/NavBar.svelte';
 		}
 	}
 </style>
+

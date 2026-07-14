@@ -1,7 +1,7 @@
 <script>
 	import { base } from '$app/paths';
-import NavBar from '$lib/components/NavBar.svelte';
-	import { getTeamMemberPath, getTeamMemberProfession, sortedTeamMembers } from '$lib/team';
+	import NavBar from '$lib/components/NavBar.svelte';
+	import { getTeamMemberPath, sortedTeamMembers } from '$lib/team';
 </script>
 
 <svelte:head>
@@ -31,8 +31,8 @@ import NavBar from '$lib/components/NavBar.svelte';
 					<div class="member-photo">
 						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
 					</div>
-					<h2>{member.krestniJmeno} {member.prijmeni}</h2>
-					<p class="member-profession">{getTeamMemberProfession(member)}</p>
+				<h2>{member.krestniJmeno} {member.prijmeni}</h2>
+				<p class="member-profession">{member.povolani}</p>
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
 					{/if}
@@ -172,3 +172,4 @@ import NavBar from '$lib/components/NavBar.svelte';
 		}
 	}
 </style>
+
