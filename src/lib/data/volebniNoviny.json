@@ -1,8 +1,9 @@
 [
   {
-    "id": "07-2026",
-    "title": "Volební noviny 07/2026",
-    "pdfFileName": "volebni-noviny-07-2026.pdf",
-    "publishedAt": "2026-07-11"
+    "id": "vn_01",
+    "title": "Volební noviny 01",
+    "pdfFileName": "vn_01.pdf",
+    "thumbnailFileName": "thumbnails/vn_01.png",
+    "publishedAt": "2026-07-13"
   }
 ]

@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+import NavBar from '$lib/components/NavBar.svelte';
 	import teamData from '$lib/data/team.json';
 
 	// Seřazení členů týmu podle ID vzestupně
@@ -102,33 +103,7 @@
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
-<!-- Navbar -->
-<nav class="navbar">
-	<div class="container">
-		<div class="nav-content">
-			<div class="nav-logo">
-				<a href="{base}/">
-					<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" />
-				</a>
-			</div>
-			<div class="nav-right">
-				<ul class="nav-links">
-					<li><a href="#tym">Tým</a></li>
-					<li><a href="{base}/blog">Blog</a></li>
-					<li><a href="{base}/volebni-noviny">Volební noviny</a></li>
-					<li><a href="#kontakt">Kontakt</a></li>
-				</ul>
-				<div class="nav-social">
-					<a href="https://www.facebook.com/zijemepropodebrady/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-							<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</nav>
+<NavBar />
 
 <!-- Hero Section -->
 <section class="hero">
@@ -280,94 +255,6 @@
 		padding: 0 60px;
 	}
 
-	.navbar .container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	@media (max-width: 768px) {
-		.container {
-			padding: 0 20px;
-		}
-	}
-
-	/* Navbar */
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background-color: #ffb240;
-		height: 100px;
-		display: flex;
-		align-items: center;
-		z-index: 1000;
-	}
-
-	.nav-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
-
-	.nav-logo a {
-		display: block;
-	}
-
-	.nav-logo img {
-		height: 70px;
-		width: auto;
-	}
-
-	.nav-right {
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-
-	.nav-links {
-		display: flex;
-		list-style: none;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		margin: 0;
-		padding: 0;
-	}
-
-	.nav-links a {
-		color: var(--dark-gray-color);
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1.125rem;
-		transition: all 0.3s ease;
-	}
-
-	.nav-links a:hover {
-		color: #BE1522;
-		font-weight: 700;
-	}
-
-	.nav-social {
-		display: flex;
-		align-items: center;
-	}
-
-	.nav-social a {
-		color: var(--dark-gray-color);
-		display: flex;
-		align-items: center;
-		transition: color 0.3s ease;
-	}
-
-	.nav-social a:hover {
-		color: #BE1522;
-	}
-
 	/* Hero Section */
 	.hero {
 		background-color: #ffb240;
@@ -467,13 +354,19 @@
 
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 3rem 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+		justify-content: center;
 		justify-items: center;
+		gap: 2rem 1.5rem;
 	}
 
 	.team-member {
+		display: grid;
+		justify-items: center;
+		gap: 0.4rem;
 		text-align: center;
+		width: 100%;
+		max-width: 260px;
 	}
 
 	.member-photo {
@@ -481,7 +374,7 @@
 		height: 200px;
 		border-radius: 50%;
 		overflow: hidden;
-		margin: 0 auto 1rem;
+		margin: 0 auto 0.75rem;
 		background-color: #f0f0f0;
 	}
 
@@ -501,13 +394,13 @@
 	.member-profession {
 		font-size: 1rem;
 		color: var(--gray-color);
-		margin-top: 0.25rem;
+		margin: 0;
 	}
 
 	.member-specialization {
 		font-size: 0.9rem;
 		color: var(--gray-color);
-		margin-top: 0.25rem;
+		margin: 0.2rem 0 0;
 		opacity: 0.8;
 	}
 
@@ -659,20 +552,8 @@
 
 	/* Responsive */
 	@media (max-width: 768px) {
-		.navbar {
-			height: 80px;
-		}
-
-		.nav-logo img {
-			height: 50px;
-		}
-
-		.nav-links {
-			gap: 0.85rem;
-		}
-
-		.nav-links a {
-			font-size: 1rem;
+		.container {
+			padding: 0 20px;
 		}
 
 		.hero {
@@ -706,14 +587,6 @@
 	}
 
 	@media (max-width: 576px) {
-		.nav-links {
-			gap: 0.7rem;
-		}
-
-		.nav-links a {
-			font-size: 0.9rem;
-		}
-
 		.hero-logo {
 			width: 90vw;
 		}

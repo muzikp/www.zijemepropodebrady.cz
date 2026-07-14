@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+import NavBar from '$lib/components/NavBar.svelte';
 	import volebniNoviny from '$lib/data/volebniNoviny.json';
 
 	function formatDate(value) {
@@ -20,24 +21,7 @@
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
-<nav class="navbar">
-	<div class="container">
-		<div class="nav-content">
-			<div class="nav-logo">
-				<a href="{base}/">
-					<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" />
-				</a>
-			</div>
-			<div class="nav-right">
-				<ul class="nav-links">
-					<li><a href="{base}/">Domů</a></li>
-					<li><a href="{base}/blog">Blog</a></li>
-					<li><a href="{base}/volebni-noviny">Volební noviny</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</nav>
+<NavBar />
 
 <section class="page">
 	<div class="container page-shell">
@@ -50,12 +34,21 @@
 		<div class="issues-grid">
 			{#each volebniNoviny as issue}
 				<article class="issue-card">
-					<div class="pdf-preview" aria-hidden="true">
-						<div class="pdf-badge">PDF</div>
-						<div class="pdf-sheet">
-							<span>{issue.title}</span>
-						</div>
-					</div>
+					<a
+						class="pdf-preview"
+						href="{base}/volebni-noviny/{issue.pdfFileName}"
+						download
+						aria-label={`Stáhnout ${issue.title}`}
+					>
+						{#if issue.thumbnailFileName}
+							<img src="{base}/volebni-noviny/{issue.thumbnailFileName}" alt="" aria-hidden="true" />
+						{:else}
+							<div class="pdf-badge">PDF</div>
+							<div class="pdf-sheet">
+								<span>{issue.title}</span>
+							</div>
+						{/if}
+					</a>
 					<div class="issue-body">
 						<p class="issue-date">{formatDate(issue.publishedAt)}</p>
 						<h2>{issue.title}</h2>
@@ -83,58 +76,6 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		padding: 0 60px;
-	}
-
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background-color: #ffb240;
-		height: 100px;
-		display: flex;
-		align-items: center;
-		z-index: 1000;
-	}
-
-	.navbar .container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	.nav-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
-
-	.nav-logo img {
-		height: 70px;
-		width: auto;
-	}
-
-	.nav-links {
-		display: flex;
-		list-style: none;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		margin: 0;
-		padding: 0;
-	}
-
-	.nav-links a {
-		color: var(--dark-gray-color);
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1.05rem;
-		transition: color 0.3s ease;
-	}
-
-	.nav-links a:hover {
-		color: #be1522;
 	}
 
 	.page-shell {
@@ -179,20 +120,26 @@
 	}
 
 	.issue-card {
-		overflow: hidden;
-		border-radius: 24px;
-		background: rgba(255, 255, 255, 0.86);
-		border: 1px solid rgba(33, 37, 41, 0.1);
-		box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+		display: grid;
+		grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+		gap: 1rem;
+		align-items: start;
 	}
 
 	.pdf-preview {
-		aspect-ratio: 16 / 10;
-		display: grid;
-		place-items: center;
-		gap: 0.75rem;
-		padding: 1.25rem;
-		background: linear-gradient(135deg, rgba(190, 21, 34, 0.12), rgba(255, 178, 64, 0.18));
+		display: block;
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		padding: 0;
+		background: transparent;
+		overflow: hidden;
+	}
+
+	.pdf-preview img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	.pdf-badge {
@@ -226,9 +173,10 @@
 	}
 
 	.issue-body {
-		padding: 1.25rem;
+		padding: 0.25rem 0;
 		display: grid;
 		gap: 0.75rem;
+		align-content: center;
 	}
 
 	.issue-date {
@@ -269,16 +217,21 @@
 			padding: 0 20px;
 		}
 
-		.navbar {
-			height: 80px;
-		}
-
-		.nav-logo img {
-			height: 50px;
-		}
-
 		.page {
 			padding-top: 110px;
+		}
+
+		.issue-card {
+			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+
+		.pdf-preview {
+			aspect-ratio: 16 / 10;
+		}
+
+		.issue-body {
+			padding: 0;
 		}
 	}
 </style>

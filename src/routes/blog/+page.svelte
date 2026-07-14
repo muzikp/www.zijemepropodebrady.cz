@@ -1,6 +1,8 @@
 <script>
 	import { base } from '$app/paths';
+	import NavBar from '$lib/components/NavBar.svelte';
 	import blogPosts from '$lib/data/blog.json';
+	import { findTeamMemberByPath, getTeamMemberDisplayName } from '$lib/team';
 
 	const sortedPosts = [...blogPosts].sort((left, right) => {
 		return new Date(right.publishedAt) - new Date(left.publishedAt);
@@ -23,6 +25,20 @@
 			year: 'numeric'
 		}).format(new Date(value));
 	}
+
+	function getAuthor(post) {
+		const author = findTeamMemberByPath(post.author);
+
+		if (!author) {
+			return null;
+		}
+
+		return {
+			name: getTeamMemberDisplayName(author),
+			href: `${base}/tym/${author.slug}`,
+			avatar: `${base}${author.avatarFilePath}`
+		};
+	}
 </script>
 
 <svelte:head>
@@ -34,24 +50,7 @@
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
-<nav class="navbar">
-	<div class="container">
-		<div class="nav-content">
-			<div class="nav-logo">
-				<a href="{base}/">
-					<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" />
-				</a>
-			</div>
-			<div class="nav-right">
-				<ul class="nav-links">
-					<li><a href="{base}/">Domů</a></li>
-					<li><a href="{base}/blog">Blog</a></li>
-					<li><a href="{base}/volebni-noviny">Volební noviny</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</nav>
+<NavBar />
 
 <section class="page">
 	<div class="container page-shell">
@@ -69,7 +68,15 @@
 					</a>
 					<div class="post-body">
 						<p class="post-date">{formatDate(post.publishedAt)}</p>
-						<h2>{post.title}</h2>
+						<h2>
+							<a href="{base}/blog/{post.id}">{post.title}</a>
+						</h2>
+						{#if getAuthor(post)}
+							<a class="post-author" href={getAuthor(post).href}>
+								<img src={getAuthor(post).avatar} alt="" aria-hidden="true" />
+								<span>{getAuthor(post).name}</span>
+							</a>
+						{/if}
 						<p class="post-excerpt">{createExcerpt(post.textHtml)}</p>
 						<a class="post-link" href="{base}/blog/{post.id}">Číst celý článek</a>
 					</div>
@@ -93,63 +100,6 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		padding: 0 60px;
-	}
-
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background-color: #ffb240;
-		height: 100px;
-		display: flex;
-		align-items: center;
-		z-index: 1000;
-	}
-
-	.navbar .container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	.nav-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
-
-	.nav-logo img {
-		height: 70px;
-		width: auto;
-	}
-
-	.nav-right {
-		display: flex;
-		align-items: center;
-	}
-
-	.nav-links {
-		display: flex;
-		list-style: none;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		margin: 0;
-		padding: 0;
-	}
-
-	.nav-links a {
-		color: var(--dark-gray-color);
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1.05rem;
-		transition: color 0.3s ease;
-	}
-
-	.nav-links a:hover {
-		color: #be1522;
 	}
 
 	.page-shell {
@@ -189,11 +139,14 @@
 
 	.posts-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: 1fr;
 		gap: 1.5rem;
+		max-width: 980px;
 	}
 
 	.post-card {
+		display: grid;
+		grid-template-columns: minmax(260px, 330px) minmax(0, 1fr);
 		overflow: hidden;
 		border-radius: 24px;
 		background: rgba(255, 255, 255, 0.86);
@@ -203,8 +156,9 @@
 
 	.post-image {
 		display: block;
-		aspect-ratio: 16 / 10;
+		aspect-ratio: 4 / 3;
 		background: #eee;
+		overflow: hidden;
 	}
 
 	.post-image img {
@@ -215,9 +169,11 @@
 	}
 
 	.post-body {
-		padding: 1.25rem;
+		padding: 1.5rem;
 		display: grid;
-		gap: 0.75rem;
+		align-content: start;
+		gap: 0.85rem;
+		font-size: 0.96rem;
 	}
 
 	.post-date {
@@ -232,13 +188,44 @@
 	.post-body h2 {
 		margin: 0;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
-		font-size: 1.55rem;
+		font-size: 1.8rem;
 		line-height: 1.15;
+	}
+
+	.post-body h2 a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.post-body h2 a:hover {
+		color: #be1522;
+	}
+
+	.post-author {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		width: fit-content;
+		color: var(--dark-gray-color);
+		text-decoration: none;
+		font-size: 0.92rem;
+		font-weight: 700;
+	}
+
+	.post-author:hover {
+		color: #be1522;
+	}
+
+	.post-author img {
+		width: 18px;
+		height: 18px;
+		border-radius: 999px;
+		object-fit: cover;
 	}
 
 	.post-excerpt {
 		margin: 0;
-		line-height: 1.6;
+		line-height: 1.55;
 		color: var(--gray-color);
 	}
 
@@ -264,16 +251,20 @@
 			padding: 0 20px;
 		}
 
-		.navbar {
-			height: 80px;
-		}
-
-		.nav-logo img {
-			height: 50px;
-		}
-
 		.page {
 			padding-top: 110px;
+		}
+
+		.post-card {
+			grid-template-columns: 1fr;
+		}
+
+		.post-image {
+			aspect-ratio: 16 / 10;
+		}
+
+		.post-body {
+			padding: 1.25rem;
 		}
 	}
 </style>

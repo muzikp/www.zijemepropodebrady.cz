@@ -1,6 +1,11 @@
 <script>
 	import { base } from '$app/paths';
+	import NavBar from '$lib/components/NavBar.svelte';
+	import { fade, scale } from 'svelte/transition';
+	import { findTeamMemberByPath, getTeamMemberDisplayName } from '$lib/team';
 	export let data;
+
+	let selectedImage = null;
 
 	function formatDate(value) {
 		return new Intl.DateTimeFormat('cs-CZ', {
@@ -9,6 +14,31 @@
 			year: 'numeric'
 		}).format(new Date(value));
 	}
+
+	function normalizeAssetPath(value) {
+		return value
+			.replace(/\\/g, '/')
+			.replace(/^\/+/, '')
+			.replace(/^static\//, '');
+	}
+
+	function openGalleryImage(image) {
+		selectedImage = image;
+	}
+
+	function closeGalleryImage() {
+		selectedImage = null;
+	}
+
+	function handleWindowKeydown(event) {
+		if (event.key === 'Escape' && selectedImage) {
+			closeGalleryImage();
+		}
+	}
+
+	$: author = data.post.author ? findTeamMemberByPath(data.post.author) : null;
+	$: authorLink = author ? `${base}/tym/${author.slug}` : null;
+	$: authorAvatar = author ? `${base}${author.avatarFilePath}` : null;
 </script>
 
 <svelte:head>
@@ -17,24 +47,9 @@
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
-<nav class="navbar">
-	<div class="container">
-		<div class="nav-content">
-			<div class="nav-logo">
-				<a href="{base}/">
-					<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" />
-				</a>
-			</div>
-			<div class="nav-right">
-				<ul class="nav-links">
-					<li><a href="{base}/">Domů</a></li>
-					<li><a href="{base}/blog">Blog</a></li>
-					<li><a href="{base}/volebni-noviny">Volební noviny</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</nav>
+<svelte:window on:keydown={handleWindowKeydown} />
+
+<NavBar />
 
 <article class="page">
 	<div class="container article-shell">
@@ -42,17 +57,59 @@
 		<header class="article-header">
 			<p class="post-date">{formatDate(data.post.publishedAt)}</p>
 			<h1>{data.post.title}</h1>
+			{#if author}
+				<a class="article-author" href={authorLink}>
+					<img src={authorAvatar} alt="" aria-hidden="true" />
+					<span>{getTeamMemberDisplayName(author)}</span>
+				</a>
+			{/if}
 		</header>
-
-		<div class="article-hero">
-			<img src="{base}{data.post.imageUrl}" alt={data.post.title} />
-		</div>
 
 		<div class="article-body">
 			{@html data.post.textHtml}
 		</div>
+
+		{#if data.post.gallery?.length}
+			<section class="article-gallery" aria-label="Galerie k článku">
+				<h2>Galerie</h2>
+				<div class="gallery-grid">
+					{#each data.post.gallery as image}
+						<figure class="gallery-item">
+							<button class="gallery-trigger" type="button" on:click={() => openGalleryImage(image)}>
+								<img
+									src="{base}/{normalizeAssetPath(image.url)}"
+									alt={image.title}
+									loading="lazy"
+								/>
+							</button>
+							{#if image.title}
+								<figcaption>{image.title}</figcaption>
+							{/if}
+						</figure>
+					{/each}
+				</div>
+			</section>
+		{/if}
 	</div>
 </article>
+
+{#if selectedImage}
+	<div class="modal-backdrop" transition:fade>
+		<div class="modal-dialog" role="dialog" tabindex="-1" aria-modal="true" aria-label={selectedImage.title}>
+			<button class="modal-close" type="button" aria-label="Zavřít" on:click={closeGalleryImage}>
+				×
+			</button>
+			<img
+				src="{base}/{normalizeAssetPath(selectedImage.url)}"
+				alt={selectedImage.title}
+				transition:scale={{ duration: 180, start: 0.94 }}
+			/>
+			{#if selectedImage.title}
+				<p class="modal-caption">{selectedImage.title}</p>
+			{/if}
+		</div>
+	</div>
+{/if}
 
 <style>
 	.page {
@@ -70,54 +127,12 @@
 		padding: 0 60px;
 	}
 
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background-color: #ffb240;
-		height: 100px;
-		display: flex;
-		align-items: center;
-		z-index: 1000;
-	}
-
-	.navbar .container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	.nav-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
-
-	.nav-logo img {
-		height: 70px;
-		width: auto;
-	}
-
-	.nav-links {
-		display: flex;
-		list-style: none;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		margin: 0;
-		padding: 0;
-	}
-
-	.nav-links a,
 	.back-link {
 		color: var(--dark-gray-color);
 		text-decoration: none;
 		font-weight: 600;
 	}
 
-	.nav-links a:hover,
 	.back-link:hover {
 		color: #be1522;
 	}
@@ -147,18 +162,27 @@
 		color: #8b6a25;
 	}
 
-	.article-hero {
-		overflow: hidden;
-		border-radius: 28px;
-		background: rgba(255, 255, 255, 0.88);
-		border: 1px solid rgba(33, 37, 41, 0.1);
-		box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+	.article-author {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		width: fit-content;
+		margin-top: 0.5rem;
+		color: var(--dark-gray-color);
+		text-decoration: none;
+		font-size: 0.92rem;
+		font-weight: 700;
 	}
 
-	.article-hero img {
-		display: block;
-		width: 100%;
-		height: auto;
+	.article-author:hover {
+		color: #be1522;
+	}
+
+	.article-author img {
+		width: 36px;
+		height: 36px;
+		border-radius: 999px;
+		object-fit: cover;
 	}
 
 	.article-body {
@@ -169,29 +193,149 @@
 		border: 1px solid rgba(33, 37, 41, 0.1);
 		border-radius: 24px;
 		box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
-		font-size: 1.08rem;
-		line-height: 1.75;
 	}
 
 	.article-body :global(p) {
 		margin: 0;
+		font-size: 0.96rem;
+		line-height: 1.68;
+	}
+
+	.article-body :global(ul),
+	.article-body :global(ol) {
+		margin: 0;
+		padding-left: 1.4rem;
+		font-size: 0.96rem;
+		line-height: 1.68;
+	}
+
+	.article-body :global(li) {
+		margin: 0.25rem 0;
+	}
+
+	.article-body :global(h2) {
+		margin: 0.4rem 0 0;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: 1.45rem;
+		line-height: 1.15;
+	}
+
+	.article-body :global(h3) {
+		margin: 0.35rem 0 0;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: 1.15rem;
+		line-height: 1.2;
 	}
 
 	.article-body :global(a) {
 		color: #be1522;
 	}
 
+	.article-gallery {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.article-gallery h2 {
+		margin: 0;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: 1.8rem;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+	}
+
+	.gallery-item {
+		width: 100%;
+		margin: 0;
+		display: grid;
+		gap: 0.5rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		text-align: left;
+	}
+
+	.gallery-trigger {
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	.gallery-item img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+		border-radius: 0;
+		background: rgba(255, 255, 255, 0.88);
+	}
+
+	.gallery-item figcaption {
+		font-size: 0.95rem;
+		line-height: 1.4;
+		color: var(--gray-color);
+	}
+
+	.modal-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 2000;
+		display: grid;
+		place-items: center;
+		padding: 24px;
+		background: rgba(17, 17, 17, 0.82);
+	}
+
+	.modal-dialog {
+		position: relative;
+		max-width: min(92vw, 1100px);
+		max-height: 90vh;
+		display: grid;
+		gap: 0.75rem;
+		place-items: center;
+	}
+
+	.modal-dialog img {
+		display: block;
+		max-width: 100%;
+		max-height: 82vh;
+		object-fit: contain;
+		border-radius: 0;
+		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+	}
+
+	.modal-caption {
+		margin: 0;
+		color: white;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.modal-close {
+		position: absolute;
+		top: -12px;
+		right: -12px;
+		width: 40px;
+		height: 40px;
+		border: 0;
+		border-radius: 999px;
+		background: white;
+		color: #222;
+		font-size: 1.8rem;
+		line-height: 1;
+		cursor: pointer;
+		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+	}
+
 	@media (max-width: 768px) {
 		.container {
 			padding: 0 20px;
-		}
-
-		.navbar {
-			height: 80px;
-		}
-
-		.nav-logo img {
-			height: 50px;
 		}
 
 		.page {
@@ -200,6 +344,10 @@
 
 		.article-body {
 			padding: 1.2rem;
+		}
+
+		.modal-dialog {
+			max-width: 96vw;
 		}
 	}
 </style>
