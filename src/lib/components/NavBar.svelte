@@ -6,7 +6,7 @@
 
 <nav class="navbar">
 	<div class="container">
-	<div class="nav-content">
+		<div class="nav-content">
 			<div class="nav-logo">
 				<a href={homeHref}>
 					<img src={`${base}/logo.png`} alt="Žijeme pro Poděbrady" />
@@ -15,6 +15,7 @@
 			<div class="nav-right">
 				<ul class="nav-links">
 					<li><a href={`${base}/`}>Domů</a></li>
+					<li><a href={`${base}/vize-2036`}>Vize 2036</a></li>
 					<li><a href={`${base}/tym`}>Tým</a></li>
 					<li><a href={`${base}/volebni-noviny`}>Volební noviny</a></li>
 					<li><a href={`${base}/blog`}>Blog</a></li>
