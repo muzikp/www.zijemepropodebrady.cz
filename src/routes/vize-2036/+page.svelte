@@ -188,7 +188,8 @@
 		background:
 			radial-gradient(circle at top left, rgba(255, 178, 64, 0.2), transparent 35%),
 			linear-gradient(180deg, #fff7ed 0%, #fffdf8 100%);
-		padding: 120px 0 72px;
+		padding: 0 0 72px;
+		margin-top: 100px;
 		color: var(--dark-gray-color);
 	}
 
@@ -245,7 +246,7 @@
 	}
 
 	.intro-copy h2 {
-		margin: 0.2rem 0 0;
+		margin: 0.25rem 0 0;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
 		font-size: 1.35rem;
 		line-height: 1.15;
@@ -284,7 +285,7 @@
 		}
 
 		.page {
-			padding-top: 110px;
+			margin-top: 80px;
 		}
 
 	}
