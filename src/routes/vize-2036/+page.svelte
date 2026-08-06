@@ -44,7 +44,7 @@
 			</p>
 		</div>
 
-		<article class="content-flow">
+		<article class="content-flow" style={`--heart-url: url(${base}/favicon.png)`}>
 			<section>
 				<h2>Město, které funguje</h2>
 				<p>
@@ -258,15 +258,37 @@
 
 	.content-flow {
 		display: grid;
-		gap: 0.6rem;
+		gap: 0;
 		font-size: 0.98rem;
 		line-height: 1.72;
+	}
+
+	.content-flow::before {
+		content: '';
+		display: block;
+		width: 2.3rem;
+		height: 2.3rem;
+		margin: 14px 0 10px;
+		background: var(--heart-url) center / contain no-repeat;
 	}
 
 	.content-flow section {
 		display: grid;
 		gap: 0.35rem;
 		padding: 0;
+	}
+
+	.content-flow section + section {
+		margin-top: 10px;
+	}
+
+	.content-flow section + section::before {
+		content: '';
+		display: block;
+		width: 2.3rem;
+		height: 2.3rem;
+		margin: 14px 0 10px;
+		background: var(--heart-url) center / contain no-repeat;
 	}
 
 	.content-flow h2 {
