@@ -201,7 +201,7 @@
 
 	.page-shell {
 		display: grid;
-		gap: 2rem;
+		gap: 1rem;
 	}
 
 	.page-header {
@@ -236,7 +236,7 @@
 
 	.intro-copy {
 		display: grid;
-		gap: 0.6rem;
+		gap: 0.35rem;
 		padding: 0;
 		background: transparent;
 		border: 0;
@@ -248,7 +248,7 @@
 	.intro-copy h2 {
 		margin: 0.25rem 0 0;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
-		font-size: 1.35rem;
+		font-size: 1.45rem;
 		line-height: 1.15;
 	}
 
@@ -258,20 +258,21 @@
 
 	.content-flow {
 		display: grid;
-		gap: 1rem;
+		gap: 0.6rem;
 		font-size: 0.98rem;
 		line-height: 1.72;
 	}
 
 	.content-flow section {
 		display: grid;
-		gap: 0.6rem;
+		gap: 0.35rem;
+		padding: 0;
 	}
 
 	.content-flow h2 {
-		margin: 0.25rem 0 0;
+		margin: 0.1rem 0 0;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
-		font-size: 1.55rem;
+		font-size: 1.45rem;
 		line-height: 1.15;
 	}
 
