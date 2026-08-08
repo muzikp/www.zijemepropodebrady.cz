@@ -188,7 +188,7 @@
 		background:
 			radial-gradient(circle at top left, rgba(255, 178, 64, 0.2), transparent 35%),
 			linear-gradient(180deg, #fff7ed 0%, #fffdf8 100%);
-		padding: 0 0 72px;
+		padding: 24px 0 72px;
 		margin-top: 100px;
 		color: var(--dark-gray-color);
 	}
@@ -308,6 +308,7 @@
 		}
 
 		.page {
+			padding-top: 18px;
 			margin-top: 80px;
 		}
 

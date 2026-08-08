@@ -149,10 +149,12 @@
 		<div class="team-grid">
 			{#each sortedTeamData as member}
 				<div class="team-member">
-					<div class="member-photo">
-						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
-					</div>
-					<h3>{member.krestniJmeno} {member.prijmeni}</h3>
+					<a class="member-link" href={getTeamMemberPath(member)}>
+						<div class="member-photo">
+							<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
+						</div>
+						<h3>{member.krestniJmeno} {member.prijmeni}</h3>
+					</a>
 					<p class="member-profession">{member.povolani}</p>
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
@@ -360,6 +362,18 @@
 		text-align: center;
 		width: 100%;
 		max-width: 260px;
+	}
+
+	.member-link {
+		display: grid;
+		justify-items: center;
+		gap: 0.4rem;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.member-link:hover h3 {
+		color: #be1522;
 	}
 
 	.member-photo {
@@ -609,4 +623,3 @@
 		}
 	}
 </style>
-

@@ -39,6 +39,7 @@
 	$: author = data.post.author ? findTeamMemberByPath(data.post.author) : null;
 	$: authorLink = author ? `${base}/tym/${author.slug}` : null;
 	$: authorAvatar = author ? `${base}${author.avatarFilePath}` : null;
+	$: showAuthor = Boolean(author);
 </script>
 
 <svelte:head>
@@ -57,7 +58,7 @@
 		<header class="article-header">
 			<p class="post-date">{formatDate(data.post.publishedAt)}</p>
 			<h1>{data.post.title}</h1>
-			{#if author}
+			{#if showAuthor}
 				<a class="article-author" href={authorLink}>
 					<img src={authorAvatar} alt="" aria-hidden="true" />
 					<span>{getTeamMemberDisplayName(author)}</span>
