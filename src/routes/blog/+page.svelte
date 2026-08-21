@@ -64,7 +64,7 @@
 			{#each sortedPosts as post}
 				<article class="post-card">
 					<a class="post-image" href="{base}/blog/{post.id}">
-						<img src="{base}{post.imageUrl}" alt={post.title} />
+						<img src="{base}{post.imageUrl || '/logo.png'}" alt={post.title} />
 					</a>
 					<div class="post-body">
 						<p class="post-date">{formatDate(post.publishedAt)}</p>
