@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import blogPosts from '$lib/data/blog.json';
 import { findTeamMemberBySlug, sortedTeamMembers } from '$lib/team';
 
 export const prerender = true;
@@ -14,5 +15,9 @@ export function load({ params }) {
 		throw error(404, 'Osoba nenalezena');
 	}
 
-	return { member };
+	const posts = [...blogPosts]
+		.filter((post) => post.author === member.path)
+		.sort((left, right) => new Date(right.publishedAt) - new Date(left.publishedAt));
+
+	return { member, posts };
 }

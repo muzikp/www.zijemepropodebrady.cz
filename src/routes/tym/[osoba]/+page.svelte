@@ -34,6 +34,26 @@
 				</div>
 			</div>
 		</article>
+
+		{#if data.posts?.length}
+			<section class="articles-section">
+				<h2>Články</h2>
+				<div class="articles-list">
+					{#each data.posts as post}
+						<article class="article-item">
+							<p class="article-date">{new Intl.DateTimeFormat('cs-CZ', {
+								day: 'numeric',
+								month: 'long',
+								year: 'numeric'
+							}).format(new Date(post.publishedAt))}</p>
+							<h3>
+								<a href="{base}/blog/{post.id}">{post.title}</a>
+							</h3>
+						</article>
+					{/each}
+				</div>
+			</section>
+		{/if}
 	</div>
 </section>
 
@@ -139,6 +159,56 @@
 
 	.cv :global(li) {
 		margin: 0.2rem 0;
+	}
+
+	.articles-section {
+		display: grid;
+		gap: 1rem;
+		margin-top: 2.25rem;
+	}
+
+	.articles-section h2 {
+		margin: 0;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: 1.7rem;
+		line-height: 1.1;
+	}
+
+	.articles-list {
+		display: grid;
+		gap: 0.9rem;
+	}
+
+	.article-item {
+		padding: 1rem 1.1rem;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.48);
+		box-shadow: 0 10px 22px rgba(0, 0, 0, 0.04);
+	}
+
+	.article-date {
+		margin: 0 0 0.35rem;
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #8b6a25;
+	}
+
+	.article-item h3 {
+		margin: 0;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: 1.15rem;
+		line-height: 1.2;
+	}
+
+	.article-item a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.article-item a:hover {
+		color: #be1522;
 	}
 
 	@media (max-width: 768px) {

@@ -64,7 +64,11 @@
 			{#each sortedPosts as post}
 				<article class="post-card">
 					<a class="post-image" href="{base}/blog/{post.id}">
-						<img src="{base}{post.imageUrl || '/logo.png'}" alt={post.title} />
+						<img
+							class:post-logo={!post.imageUrl || post.imageUrl === '/logo.png'}
+							src="{base}{post.imageUrl || '/logo.png'}"
+							alt={post.title}
+						/>
 					</a>
 					<div class="post-body">
 						<p class="post-date">{formatDate(post.publishedAt)}</p>
@@ -166,6 +170,12 @@
 		height: 100%;
 		object-fit: cover;
 		display: block;
+	}
+
+	.post-image img.post-logo {
+		object-fit: contain;
+		padding: 0.9rem;
+		background: rgba(255, 255, 255, 0.78);
 	}
 
 	.post-body {
