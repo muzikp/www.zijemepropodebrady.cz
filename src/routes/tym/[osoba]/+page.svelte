@@ -22,16 +22,23 @@
 
 		<article class="profile">
 			<div class="profile-photo">
-				<img src="{base}{data.member.avatarFilePath}" alt={`${data.member.krestniJmeno} ${data.member.prijmeni}`} />
+				<img
+					src="{base}{data.member.avatarFilePath || '/logo.png'}"
+					alt={`${data.member.krestniJmeno} ${data.member.prijmeni}`}
+				/>
 			</div>
 
 			<div class="profile-body">
 				<p class="eyebrow">Tým</p>
 				<h1>{data.member.krestniJmeno} {data.member.prijmeni}</h1>
-				<p class="profession">{data.member.povolani}</p>
-				<div class="cv">
-					{@html data.member.cvHtml}
-				</div>
+				{#if data.member.povolani}
+					<p class="profession">{data.member.povolani}</p>
+				{/if}
+				{#if data.member.cvHtml}
+					<div class="cv">
+						{@html data.member.cvHtml}
+					</div>
+				{/if}
 			</div>
 		</article>
 

@@ -25,14 +25,19 @@
 			</p>
 		</header>
 
-				<div class="team-grid">
+		<div class="team-grid">
 			{#each sortedTeamMembers as member}
 				<a class="team-member" href="{base}{getTeamMemberPath(member)}">
 					<div class="member-photo">
-						<img src="{base}{member.avatarFilePath}" alt="{member.krestniJmeno} {member.prijmeni}" />
+						<img
+							src="{base}{member.avatarFilePath || '/logo.png'}"
+							alt="{member.krestniJmeno} {member.prijmeni}"
+						/>
 					</div>
 				<h2>{member.krestniJmeno} {member.prijmeni}</h2>
-				<p class="member-profession">{member.povolani}</p>
+				{#if member.povolani}
+					<p class="member-profession">{member.povolani}</p>
+				{/if}
 					{#if member.specializace}
 						<p class="member-specialization">{member.specializace}</p>
 					{/if}
