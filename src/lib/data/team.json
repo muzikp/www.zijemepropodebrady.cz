@@ -7,7 +7,7 @@
     "povolani": "Podnikatel a radní města",
     "cvHtml": "Pavel Louda je poděbradský rodák, městský radní a otec tří dětí. Vybudoval silný holding s celorepublikovou působností, který zahrnuje prodej automobilů, sklárny, development i EKO Gymnázium. Do politiky přináší nadhled a velké zkušenosti z řízení projektů. Má jasno v tom, že cílem města musí být skutečný rozvoj a moderní zázemí, nikoliv pouhá údržba. Řízení fungujících firem mu dává nezávislost, kterou město potřebuje. Chce své zkušenosti využít k tomu, aby Poděbrady byly dobrým místem pro život.",
     "email": "pavel.louda@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/louda.jpg",
+    "avatarFilePath": "/avatars/louda.webp",
     "slug": "pavel-louda"
   },
   {
@@ -20,7 +20,7 @@
     "povolani": "Obchodní manažerka ve zdravotnictví a kandidátka na starostku",
     "cvHtml": "Tereza Horníčková žije v Poděbradech 20 let, s manželem zde vychovává tři děti a pracuje jako obchodní manažerka ve zdravotnictví. Zkušenosti z ciziny i sport ji naučily disciplíně a nadhledu. Od roku 2022 působí v Komisi urbanismu a dopravy. Jako lektorka tance podporuje místní gymnastky a pro město chce bezpečné prostředí, kvalitní školy i otevřenou komunikaci.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/hornickova.jpg",
+    "avatarFilePath": "/avatars/hornickova.webp",
     "slug": "tereza-hornickova"
   },
   {
@@ -33,7 +33,7 @@
     "povolani": "Podnikatel v potravinářství",
     "cvHtml": "Jiří Vlasák je poděbradský rodák, otec tří synů a zkušený manažer. Deset let řídil strategii Kofoly, úspěšně restrukturalizoval firmy v zahraničí a nyní vede rodinné lahůdkářství. Své letité zkušenosti s financemi už dnes předává městu ve Finančním výboru a Městské realitní. Ve volném čase spoluzakládal festival Lodě(nice)brady. Jeho motto je <i>Pořádně, nebo vůbec.</i>",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/vlasak.jpg",
+    "avatarFilePath": "/avatars/vlasak.webp",
     "slug": "jiri-vlasak"
   },
   {
@@ -46,7 +46,7 @@
     "povolani": "Zástupce ředitele a učitel na EKO gymnáziu a zastupitel města",
     "cvHtml": "Petr Hercik je poděbradský rodák, městský zastupitel a dlouholetý pedagog. S manželkou vychovává dvě děti a navazuje na hlubokou rodinnou tradici v poděbradské kultuře a sportu. Od roku 2025 má jako určený zastupitel na starosti změny územního plánu. Jeho prioritou je rozvoj školských kapacit, systematický přístup a podpora volnočasového vzdělávání. Věří, že pokud využijeme zkušeností a budeme otevření novým poznatkům, vybudujeme město, na které budeme právem hrdi.",
     "email": "petr.dvorak@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/hercik.jpg",
+    "avatarFilePath": "/avatars/hercik.webp",
     "slug": "petr-hercik"
   },
   {
@@ -57,7 +57,7 @@
     "prijmeni": "Paskovský",
     "povolani": "Podnikatel",
     "cvHtml": "",
-    "avatarFilePath": "/avatars/mirek-paskovsky.jpg"
+    "avatarFilePath": "/avatars/mirek-paskovsky.webp"
   },
   {
     "id": 6,
@@ -67,7 +67,7 @@
     "prijmeni": "Martinová",
     "povolani": "Projektová manažerka",
     "cvHtml": "Marta Martinová se do Poděbrad vrátila, aby pomohla uzdravit krajinu v jejich okolí a rozvíjet energetickou soběstačnost regionu. Zkušenosti získala také jako ředitelka kulturní neziskové organizace, novinářka a poradkyně senátorky. Právě lázeňské město by mohlo ideálním způsobem využívat chytrá řešení, která kombinují ekonomickou udržitelnost a kvalitní prostředí pro každodenní život. Poděbrady mají obrovský potenciál – teď je čas ho konečně začít naplňovat.",
-    "avatarFilePath": "/avatars/marta-martinova.png"
+    "avatarFilePath": "/avatars/marta-martinova.webp"
   },
   {
     "id": 7,
@@ -79,7 +79,7 @@
     "povolani": "Poděbradský politik, bývalý starosta Poděbrad",
     "cvHtml": "Ing. Jozef Ďurčanský je bývalý starosta Poděbrad a zkušený politik. Je to klidná síla – rozvážný muž, který věcem naslouchá a hluboce o nich přemýšlí. Navazuje na tři předchozí volební období, skvěle zná legislativu a má obrovské praktické zkušenosti z vedení radnice. Díky tomu detailně ví, co město potřebuje a jak s rozmyslem a odborností vést Poděbrady kupředu. ",
     "email": "jan.novak@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/durcansky.jpg",
+    "avatarFilePath": "/avatars/durcansky.webp",
     "slug": "jozef-durcansky"
   },
   {
@@ -90,7 +90,7 @@
     "prijmeni": "Votrubová",
     "povolani": "Manažerka ve zdravotnictví",
     "cvHtml": "",
-    "avatarFilePath": "/avatars/kamila-votrubova.png"
+    "avatarFilePath": "/avatars/kamila-votrubova.webp"
   },
   {
     "id": 9,
@@ -99,7 +99,7 @@
     "krestniJmeno": "Lenka",
     "prijmeni": "Borecká",
     "povolani": "Ekonomka",
-    "avatarFilePath": "/avatars/borecka.jpg",
+    "avatarFilePath": "/avatars/borecka.webp",
     "cvHtml": "Lenka Borecká žije v Poděbradech přes 50 let. Jako absolventka VŠE působila na manažerských pozicích v Lázních Poděbrady, ve státní správě i samosprávě a pro město pracovala v odborných komisích či při založení Místního výboru Žižkov. Její hlavní prioritou je zvýšit zájem vedení města o Žižkov a výrazně zde zlepšit kvalitu života. V komunální politice chce dále prosazovat efektivní hospodaření s městskými financemi, zklidnění dopravy a navrácení pohody do celých Poděbrad."
   },
   {
@@ -112,7 +112,7 @@
     "povolani": "Ředitelka Městského kulturního centra",
     "cvHtml": "Lucie Kurková je ředitelkou Městského kulturního centra a Poděbrady jsou její srdeční záležitostí. Město ji uhranulo svou polohou, klidnou atmosférou i množstvím zeleně přímo v centru. Z pozice své profese i osobního života chce maximálně přispívat k tomu, aby Poděbrady byly trvale dobrou adresou. Jejím cílem je město, kde je obyčejná lidská slušnost doma a kde se všem žije příjemně a bezpečně.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/kurkova.jpg",
+    "avatarFilePath": "/avatars/kurkova.webp",
     "slug": "lucie-kurkova"
   },
   {
@@ -125,7 +125,7 @@
     "cvHtml": "V Poděbradech žije téměř 20 let – takže často ví, kde se (ne)bude opravovat chodník ještě dřív, než se rozbije. Ekonom v IT, který rozvíjí obchod, buduje týmy a hlídá, aby bezpečnost nebyla jen hezký slogan. Ve volném čase fotí, běhá nebo létá na paraglidu – a nejraději se věnuje rodině, svému nejdůležitějšímu projektu. Poděbrady chce posunout k otevřenému a smysluplně řízenému městu.",
     "povolani": "Ekonom v IT",
     "email": "milan.chromy@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/milan.jpg",
+    "avatarFilePath": "/avatars/milan.webp",
     "slug": "milan-chromy"
   },
   {
@@ -138,7 +138,7 @@
     "povolani": "Velitel stanice HZS",
     "cvHtml": "Vedoucím Hasičského záchranného sboru, který v Poděbradech prožil celý svůj život. Na městě oceňuje především dostatek zeleně a relaxačních zón. Díky své profesi má ale skvělý přehled o tom, co Poděbrady pálí. Rád by pomohl „uhasit“ problémy s dopravou, nedostatkem parkovacích míst a špatným stavem silnic i chodníků. Město by mělo lépe údržovat zeleň, ale i zapracovat na rozšíření cyklostezek podél Labe a vybudování nových sportovišť pro veřejnost.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/pardubsky.jpg",
+    "avatarFilePath": "/avatars/pardubsky.webp",
     "slug": "jan-pardubsky"
   },
   {
@@ -149,7 +149,7 @@
     "prijmeni": "Jamný",
     "povolani": "Podnikatel",
     "cvHtml": "Dušan Jamný strávil v Poděbradech téměř celý svůj život. Na městě nejvíce oceňuje jeho lázeňský charakter a má blízko zejména ke Královské oboře a Polabci, který považuje za nejkrásnější část města. Jeho prioritou je zachování a rozvoj lázeňské atmosféry i prosazení kvalitního územního plánu, který bude závazný pro všechny bez výjimek a zajistí Poděbradům promyšlenou budoucnost.",
-    "avatarFilePath": "/avatars/dusan-jamny.jpg"
+    "avatarFilePath": "/avatars/dusan-jamny.webp"
   },
   {
     "id": 14,
@@ -161,7 +161,7 @@
     "povolani": "Podnikatel",
     "cvHtml": "Jaroslav Votava je poděbradský rodák, jednatel reklamní agentury a předseda beachvolejbalového oddílu. V Poděbradech vyrostl a jeho děti zde chodí do školy. Z vedení firmy ví, že každý úspěšný projekt potřebuje jasnou strategii. Sport nevnímá jako luxus, ale jako investici do zdravého města. Jeho prioritou je rozvoj i budování sportovišť a férové financování všech klubů – od rekreačních amatérů až po výkonnostní sportovce, aby byl sport dostupný pro každého.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/votava.png",
+    "avatarFilePath": "/avatars/votava.webp",
     "slug": "jaroslav-votava"
   },
   {
@@ -172,7 +172,7 @@
     "prijmeni": "Louda",
     "povolani": "Ředitel prodeje",
     "cvHtml": "Petr Louda je rodilým Žižkovákem, v Poděbradech vyrostl a dnes zde vychovává své dvě děti. Ze svých dlouholetých zkušeností v manažerských pozicích ví, jak měnit dobré nápady v konkrétní výsledky. Do vedení města chce přinést svěží vítr, energii a pohled člověka, který se změn nebojí. Jeho prioritou je moderní rozvoj Poděbrad s jasnou vizí do budoucna, otevřenost novým nápadům a odvaha posouvat věci skutečně dopředu.",
-    "avatarFilePath": "/avatars/petr-louda.png"
+    "avatarFilePath": "/avatars/petr-louda.webp"
   },
   {
     "id": 16,
@@ -184,7 +184,7 @@
     "povolani": "Advokátka",
     "cvHtml": "Daniela Potůčková je advokátka, která v Poděbradech žije více než 15 let. Ráda tráví čas se svou rodinou, sportuje, čte nebo vyráží do přírody a za poděbradským kulturním životem. Její prioritou je bezpečné a čisté veřejné prostředí, přívětivější a efektivnější fungování městského úřadu pro občany i celkový rozvoj volnočasové a sportovní infrastruktury ve městě.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/potuckova.jpg",
+    "avatarFilePath": "/avatars/potuckova.webp",
     "slug": "daniela-potuckova"
   },
   {
@@ -195,7 +195,7 @@
     "prijmeni": "Kunc",
     "povolani": "Ředitel stavebně výrobního závodu",
     "cvHtml": "Tomáš Kunc žije v Poděbradech již přes 30 let a celý svůj profesní život se věnuje stavebnictví v oboru pozemních komunikací. Jako obyvatel Žižkova chce městu nabídnout své odborné zkušenosti při tvorbě jasné a dlouhodobé koncepce oprav a údržby ulic, chodníků i inženýrských sítí. Prioritou je pravidelný investiční plán města zaměřený v prvním kroku na rekonstrukci náměstí Jiřího z Poděbrad z kamenné dlažby, obnovu historického jádra a férový rozvoj okrajových částí Velkého Zboží, Kluku a Přední Lhoty. Zvláštní pozornost věnuje opomíjenému Žižkovu, kde sám žije, a kde prosazuje výsadbu zeleně, dokončení cyklostezek a vybudování harmonicky navrženého a potřebného parku.",
-    "avatarFilePath": "/avatars/tomas-kunc.png"
+    "avatarFilePath": "/avatars/tomas-kunc.webp"
   },
   {
     "id": 18,
@@ -206,7 +206,7 @@
     "povolani": "Důchodce",
     "cvHtml": "Jaromír Žatečka prožil v Poděbradech půlstoletí, které ho utvrdilo v tom, že je to jedno z nejlepších míst k žití. Miluje zdejší poklidnou lázeňskou atmosféru, kulturu, procházky podél řeky i golf v malebné přírodě. Jako senior a aktivní důchodce má však jasnou představu o tom, jak by město mělo fungovat, aby bylo přívětivé pro starší generaci. Kromě lepších podmínek pro seniory vnímá jako patriot i další palčivé problémy, zejména hustou dopravu v centru. Rozhodl se proto podpořit kandidátku svými celoživotními zkušenostmi a přispět tak k řešení (nejen) tohoto problému.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/zatecka.jpg",
+    "avatarFilePath": "/avatars/zatecka.webp",
     "slug": "jaromir-zatecka"
   },
   {
@@ -219,7 +219,7 @@
     "povolani": "Důchodkyně",
     "cvHtml": "Eva Svobodová je dlouholetá poděbradská pedagožka, kterou do města po studiích na UK přivedla láska. Více než 20 let úspěšně vedla zdejší VOŠ hotelnictví a turismu a pro studenty organizovala odborné praxe po celém světě – od Aljašky až po Japonsko. Do Poděbrad také přivedla řadu zahraničních expertů na vzdělávání. Aktuálně učí angličtinu na EKO gymnáziu a SOŠ multimediálních studií. Její prioritou je rozvoj školství, mezinárodní spolupráce a podpora cestovního ruchu v Poděbradech.",
     "email": "marie.novakova@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/svobodova.jpg",
+    "avatarFilePath": "/avatars/svobodova.webp",
     "slug": "eva-svobodova"
   },
   {
@@ -232,7 +232,7 @@
     "povolani": "Projektový manažer",
     "cvHtml": "Jako profesionál pracující ve zdravotnictví ví, jak náročné je zde sehnat kvalitní a dostupnou péči. Právě v této oblasti je podle něj potřeba nejvíce zapracovat. Město trestuhodně nevyužívá svůj potenciál prémiové lázeňské destinace a zcela opomíjí dostupné dotační tituly. Postrádá proaktivní radnici, která by měla jasnou strategii a ambice. S pomocí externího financování chce rozvoj města konečně „odbrzdit“ a zaměřit se na to klíčové: aktivně do Poděbrad lákat kvalitní lékaře a dlouhodobě zde zajišťovat zdravotnické služby pro všechny občany.",
     "email": "martin.vobr@zijemepropodebrady.cz",
-    "avatarFilePath": "/avatars/vobr.jpg",
+    "avatarFilePath": "/avatars/vobr.webp",
     "slug": "martin-vobr"
   },
   {
@@ -243,6 +243,6 @@
     "prijmeni": "Vondra",
     "povolani": "Jednatel společnosti",
     "cvHtml": "Jindřich Vondra žije v Poděbradech s rodinou již od roku 1987. Ve městě i jeho okolí nejvíce oceňuje kompaktní zástavbu, všudypřítomnou zeleň, klidové zóny a výbornou dostupnost služeb. Jeho prioritou je koncepční rozvoj a regulace městské výstavby prostřednictvím územního plánu tak, aby nový rozvoj probíhal uvážlivě a byl vždy propojen s rozšiřováním občanské vybavenosti a dalších relaxačních ploch pro obyvatele.",
-    "avatarFilePath": "/avatars/jindrich-vondra.jpg"
+    "avatarFilePath": "/avatars/jindrich-vondra.webp"
   }
 ]
