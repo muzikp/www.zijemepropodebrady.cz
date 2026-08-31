@@ -21,7 +21,7 @@
 			<p class="eyebrow">Tým</p>
 			<h1>NÁŠ TÝM PRO PODĚBRADY</h1>
 			<p class="lead">
-				Lidé, kteří stojí za kandidátkou Žijeme pro Poděbrady. Medailonky doplníme později.
+				Lidé, kteří stojí za kandidátkou Žijeme pro Poděbrady.
 			</p>
 		</header>
 
