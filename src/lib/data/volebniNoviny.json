@@ -1,5 +1,12 @@
 [
   {
+    "id": "vn_03",
+    "title": "Volebn\u00ed noviny 03",
+    "pdfFileName": "vn_03.pdf",
+    "thumbnailFileName": "thumbnails/vn_03.png",
+    "publishedAt": "2026-09-08"
+  },
+  {
     "id": "vn_02",
     "title": "Volební noviny 02",
     "pdfFileName": "vn_02.pdf",
