@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import teamData from '$lib/data/team.json';
+	import priorities from '$lib/data/priorities.json';
 	import { getTeamMemberPath } from '$lib/team';
 
 	// Seřazení členů týmu podle ID vzestupně
@@ -116,28 +117,16 @@
 <!-- Priorities Section -->
 	<section class="priorities">
 		<div class="container">
-			<h2>NAŠE PRIORITY</h2>
+			<h2>7 PRIORIT PRO NAŠE MĚSTO</h2>
 		<ul class="priority-list">
-			<li>
-				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>Vyřešíme parkování a bude pro občany města ZDARMA!</span>
-			</li>
-			<li>
-				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>Nová POLIKLINIKA a centralizování lékařské péče pod jednu střechu.</span>
-			</li>
-			<li>
-				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>ČISTÉ MĚSTO každý den!</span>
-			</li>
-			<li>
-				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>Fungující úřad jako servis pro občany.</span>
-			</li>
-			<li>
-				<img src="{base}/favicon.png" alt="" aria-hidden="true" />
-				<span>10.000.000 Kč pro sportovní kluby.</span>
-			</li>
+			{#each priorities as priority}
+				<li>
+					<a href={`${base}/priority`}>
+						<img src="{base}/favicon.png" alt="" aria-hidden="true" />
+						<span>{priority.title}</span>
+					</a>
+				</li>
+			{/each}
 		</ul>
 	</div>
 </section>
@@ -334,6 +323,15 @@
 		font-size: 1.1rem;
 		line-height: 1.45;
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	}
+
+	.priority-list a {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.9rem;
+		width: 100%;
+		color: inherit;
+		text-decoration: none;
 	}
 
 	.priority-list img {

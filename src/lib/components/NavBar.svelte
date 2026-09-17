@@ -15,6 +15,7 @@
 			<div class="nav-right">
 				<ul class="nav-links">
 					<li><a href={`${base}/`}>Domů</a></li>
+					<li><a href={`${base}/priority`}>NAŠE PRIORITY</a></li>
 					<li><a href={`${base}/vize-2036`}>Vize 2036</a></li>
 					<li><a href={`${base}/tym`}>Tým</a></li>
 					<li><a href={`${base}/volebni-noviny`}>Volební noviny</a></li>

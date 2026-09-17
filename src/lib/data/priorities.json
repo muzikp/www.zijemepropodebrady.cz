@@ -1,0 +1,37 @@
+[
+  {
+    "id": "parkovani",
+    "title": "Parkování pro občany Poděbrad ZDARMA!",
+    "description": "MÉNĚ KROUŽENÍ, VÍCE PARKOVÁNÍ. Máme recept na parkování ve městě. Jak pro návštěvníky, tak především pro občany Poděbrad."
+  },
+  {
+    "id": "urad",
+    "title": "ÚŘAD MÁ SLOUŽIT OBČANŮM, ne politickému vedení.",
+    "description": "Politické vedení má určovat směr, ne výsledek rozhodování. Chceme vytvořit podmínky, aby mohl dobře sloužit občanům."
+  },
+  {
+    "id": "poliklinika",
+    "title": "Poděbrady potřebují POLIKLINIKU!",
+    "description": "Chceme soustředit zdravotní péči pod jednu střechu a vytvořit moderní polikliniku, která bude dostupná pro všechny generace."
+  },
+  {
+    "id": "sport",
+    "title": "10.000.000 Kč ročně pro sportovní kluby",
+    "description": "Sportovní kluby vychovávají naše děti, budují komunitu i zdravý životní styl. Chceme jim zajistit stabilní financování, lepší podmínky pro práci a větší podporu kvalitních trenérů."
+  },
+  {
+    "id": "bydleni",
+    "title": "Bytová politika s péčí řádného hospodáře.",
+    "description": "Městské byty v Poděbradech musí sloužit k udržení mladých rodin a klíčových profesí, jako jsou učitelé, zdravotníci či hasiči. Investice do bytového fondu proto budeme plánovat systematicky tak, aby dlouhodobě zvyšovaly jeho hodnotu i rozšiřovaly nabídku dostupného bydlení."
+  },
+  {
+    "id": "zizkov",
+    "title": "Městský park a občanská vybavenost na Žižkově.",
+    "description": "Chceme ze Žižkova vytvořit živé a vyvážené místo pro kvalitní život. Budeme investovat do pokračování lázeňského parku, který nabídne kultivované prostředí pro setkávání i aktivní odpočinek. Zároveň podpoříme rozvoj lokální ekonomiky – místních obchodů, kaváren a návazných služeb."
+  },
+  {
+    "id": "kongresovy-dum",
+    "title": "Kongresový lázeňský dům",
+    "description": "Městský úřad přesuneme do Hlinkových domů, kde vytvoříme moderní a důstojné zázemí pro občany i zaměstnance. Uvolněný objekt Pentagonu proměníme v multifunkční centrum – vznikne zde nový kulturní sál, kongresové ubytování a kongresový lázeňský dům."
+  }
+]
