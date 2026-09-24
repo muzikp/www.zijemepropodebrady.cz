@@ -5,6 +5,27 @@
 	import priorities from '$lib/data/priorities.json';
 	import { getTeamMemberPath } from '$lib/team';
 
+	const siteNavigation = {
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		name: 'Žijeme pro Poděbrady',
+		itemListElement: [
+			['Naše priority', '/priority'],
+			['Vize 2036', '/vize-2036'],
+			['Tým', '/tym'],
+			['Blog', '/blog'],
+			['Volební noviny', '/volebni-noviny'],
+			['Kontakt', '/kontakt']
+		].map(([name, path], position) => ({
+			'@type': 'ListItem',
+			position: position + 1,
+			name,
+			url: `https://www.zijemepropodebrady.cz${path}`
+		}))
+	};
+
+	const structuredData = JSON.stringify(siteNavigation);
+
 	// Seřazení členů týmu podle ID vzestupně
 	const sortedTeamData = [...teamData].sort((a, b) => {
 		const idA = parseInt(a.id);
@@ -101,7 +122,12 @@
 
 <svelte:head>
 	<title>Žijeme pro Poděbrady</title>
-	<meta name="description" content="Žijeme pro Poděbrady - společně pro lepší budoucnost našeho města" />
+	<meta
+		name="description"
+		content="Žijeme pro Poděbrady: naše priority, Vize 2036, tým, blog, volební noviny a kontakt. Společně pro lepší budoucnost našeho města."
+	/>
+	<link rel="canonical" href="https://www.zijemepropodebrady.cz/" />
+	<script type="application/ld+json">{@html structuredData}</script>
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
 </svelte:head>
 
@@ -110,7 +136,7 @@
 <!-- Hero Section -->
 <section class="hero">
 	<div class="hero-content">
-		<img src="{base}/logo.png" alt="Žijeme pro Poděbrady" class="hero-logo" />
+		<img src="{base}/logo.png" alt="" aria-hidden="true" class="hero-logo" />
 	</div>
 </section>
 

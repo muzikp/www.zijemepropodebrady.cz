@@ -4,7 +4,7 @@
 	export let homeHref = `${base}/`;
 </script>
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Hlavní navigace">
 	<div class="container">
 		<div class="nav-content">
 			<div class="nav-logo">
