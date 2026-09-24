@@ -1,7 +1,7 @@
 <script>
 	import { base } from '$app/paths';
 	import NavBar from '$lib/components/NavBar.svelte';
-	import blogPosts from '$lib/data/blog.json';
+	import blogPosts from '$lib/data/blogPosts.js';
 	import { findTeamMemberByPath, getTeamMemberDisplayName } from '$lib/team';
 
 	const sortedPosts = [...blogPosts].sort((left, right) => {

@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import blogPosts from '$lib/data/blog.json';
+	import blogPosts from '$lib/data/blogPosts.js';
 
 export const prerender = true;
 

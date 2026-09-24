@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import blogPosts from '$lib/data/blog.json';
+	import blogPosts from '$lib/data/blogPosts.js';
 import { findTeamMemberBySlug, sortedTeamMembers } from '$lib/team';
 
 export const prerender = true;
