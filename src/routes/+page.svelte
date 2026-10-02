@@ -121,6 +121,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="Žijeme pro Poděbrady, Poděbrady, komunální politika, volby 2026, kandidátka" />
 	<title>Žijeme pro Poděbrady</title>
 	<meta
 		name="description"

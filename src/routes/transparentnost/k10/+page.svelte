@@ -37,6 +37,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="transparentnost, politická reklama, Žijeme pro Poděbrady, volební kampaň" />
 	<title>Transparentnost | K10</title>
 	<meta name="description" content="Transparentnost politické reklamy Žijeme pro Poděbrady pro kampaň v září a říjnu 2026." />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />

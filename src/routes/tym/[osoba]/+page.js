@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 	import blogPosts from '$lib/data/blogPosts.js';
+	import { getPostAuthorPaths } from '$lib/blog';
 import { findTeamMemberBySlug, sortedTeamMembers } from '$lib/team';
 
 export const prerender = true;
@@ -16,7 +17,7 @@ export function load({ params }) {
 	}
 
 	const posts = [...blogPosts]
-		.filter((post) => post.author === member.path)
+		.filter((post) => getPostAuthorPaths(post).includes(member.path))
 		.sort((left, right) => new Date(right.publishedAt) - new Date(left.publishedAt));
 
 	return { member, posts };

@@ -4,6 +4,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="Vize 2036, Poděbrady, rozvoj města, budoucnost Poděbrad, Žijeme pro Poděbrady" />
 	<title>Vize 2036 | Žijeme pro Poděbrady</title>
 	<meta
 		name="description"

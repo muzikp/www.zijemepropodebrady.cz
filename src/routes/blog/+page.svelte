@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import blogPosts from '$lib/data/blogPosts.js';
+	import { getPostAuthorPaths } from '$lib/blog';
 	import { findTeamMemberByPath, getTeamMemberDisplayName } from '$lib/team';
 
 	const sortedPosts = [...blogPosts].sort((left, right) => {
@@ -26,22 +27,20 @@
 		}).format(new Date(value));
 	}
 
-	function getAuthor(post) {
-		const author = findTeamMemberByPath(post.author);
-
-		if (!author) {
-			return null;
-		}
-
-		return {
-			name: getTeamMemberDisplayName(author),
-			href: `${base}/tym/${author.slug}`,
-			avatar: `${base}${author.avatarFilePath}`
-		};
+	function getAuthors(post) {
+		return getPostAuthorPaths(post)
+			.map((path) => findTeamMemberByPath(path))
+			.filter(Boolean)
+			.map((author) => ({
+				name: getTeamMemberDisplayName(author),
+				href: `${base}/tym/${author.slug}`,
+				avatar: `${base}${author.avatarFilePath}`
+			}));
 	}
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="blog Poděbrady, Žijeme pro Poděbrady, komunální politika, Poděbrady" />
 	<title>Blog | Žijeme pro Poděbrady</title>
 	<meta
 		name="description"
@@ -75,11 +74,15 @@
 						<h2>
 							<a href="{base}/blog/{post.id}">{post.title}</a>
 						</h2>
-						{#if getAuthor(post)}
-							<a class="post-author" href={getAuthor(post).href}>
-								<img src={getAuthor(post).avatar} alt="" aria-hidden="true" />
-								<span>{getAuthor(post).name}</span>
-							</a>
+						{#if getAuthors(post).length}
+							<div class="post-authors">
+								{#each getAuthors(post) as author}
+									<a class="post-author" href={author.href}>
+										<img src={author.avatar} alt="" aria-hidden="true" />
+										<span>{author.name}</span>
+									</a>
+								{/each}
+							</div>
 						{/if}
 						<p class="post-excerpt">{createExcerpt(post.textHtml)}</p>
 						<a class="post-link" href="{base}/blog/{post.id}">Číst celý článek</a>
@@ -220,6 +223,12 @@
 		text-decoration: none;
 		font-size: 0.92rem;
 		font-weight: 700;
+	}
+
+	.post-authors {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
 	}
 
 	.post-author:hover {

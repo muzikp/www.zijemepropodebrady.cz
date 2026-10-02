@@ -13,6 +13,7 @@ import NavBar from '$lib/components/NavBar.svelte';
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="volební noviny, Poděbrady, Žijeme pro Poděbrady, komunální volby 2026" />
 	<title>Volební noviny | Žijeme pro Poděbrady</title>
 	<meta
 		name="description"

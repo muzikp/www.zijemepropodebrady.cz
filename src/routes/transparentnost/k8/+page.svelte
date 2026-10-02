@@ -66,6 +66,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="transparentnost, politická reklama, Žijeme pro Poděbrady, volební kampaň" />
 	<title>Transparentnost | K8</title>
 	<meta
 		name="description"

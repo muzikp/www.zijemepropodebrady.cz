@@ -90,6 +90,7 @@ import NavBar from '$lib/components/NavBar.svelte';
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="kontakt Žijeme pro Poděbrady, Poděbrady, komunální politika" />
 	<title>Kontakt | Žijeme pro Poděbrady</title>
 	<meta name="description" content="Kontaktní údaje spolku Žijeme pro Poděbrady." />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />

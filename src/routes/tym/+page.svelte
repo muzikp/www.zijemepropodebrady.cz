@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="tým Žijeme pro Poděbrady, kandidáti Poděbrady, komunální volby 2026" />
 	<title>Tým | Žijeme pro Poděbrady</title>
 	<meta
 		name="description"

@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="priority Poděbrady, Žijeme pro Poděbrady, parkování, poliklinika, sport, bydlení" />
 	<title>Naše priority | Žijeme pro Poděbrady</title>
 	<meta name="description" content="Sedm priorit pro naše město podle hnutí Žijeme pro Poděbrady." />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
@@ -26,7 +27,11 @@
 					<div class="priority-number">{String(index + 1).padStart(2, '0')}</div>
 					<div>
 						<h2>{priority.title}</h2>
-						<p>{priority.description}</p>
+						<p class="priority-lead">{@html priority.leadHtml}</p>
+						<p>{@html priority.detailsHtml}</p>
+						{#if priority.articleId}
+							<a class="priority-link" href={`${base}/blog/${priority.articleId}`}>Číst dále</a>
+						{/if}
 					</div>
 				</article>
 			{/each}
@@ -112,6 +117,18 @@
 		margin: 0;
 		font-size: 1.05rem;
 		line-height: 1.6;
+	}
+
+	.priority-link {
+		display: inline-flex;
+		margin-top: 1rem;
+		color: #be1522;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.priority-link:hover {
+		text-decoration: underline;
 	}
 
 	@media (max-width: 640px) {

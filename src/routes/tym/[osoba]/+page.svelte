@@ -9,6 +9,7 @@
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="tým Žijeme pro Poděbrady, kandidáti Poděbrady, komunální volby 2026" />
 	<title>{getTitle(data.member)}</title>
 	<meta name="description" content={`${data.member.krestniJmeno} ${data.member.prijmeni}`} />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />

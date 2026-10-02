@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import { fade, scale } from 'svelte/transition';
+	import { getPostAuthorPaths } from '$lib/blog';
 	import { findTeamMemberByPath, getTeamMemberDisplayName } from '$lib/team';
 	export let data;
 
@@ -36,13 +37,13 @@
 		}
 	}
 
-	$: author = data.post.author ? findTeamMemberByPath(data.post.author) : null;
-	$: authorLink = author ? `${base}/tym/${author.slug}` : null;
-	$: authorAvatar = author ? `${base}${author.avatarFilePath}` : null;
-	$: showAuthor = Boolean(author);
+	$: authors = getPostAuthorPaths(data.post)
+		.map((path) => findTeamMemberByPath(path))
+		.filter(Boolean);
 </script>
 
 <svelte:head>
+	<meta name="keywords" content="blog Poděbrady, Žijeme pro Poděbrady, komunální politika, Poděbrady" />
 	<title>{data.post.title} | Blog</title>
 	<meta name="description" content={data.post.title} />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
@@ -58,11 +59,15 @@
 		<header class="article-header">
 			<p class="post-date">{formatDate(data.post.publishedAt)}</p>
 			<h1>{data.post.title}</h1>
-			{#if showAuthor}
-				<a class="article-author" href={authorLink}>
-					<img src={authorAvatar} alt="" aria-hidden="true" />
-					<span>{getTeamMemberDisplayName(author)}</span>
-				</a>
+			{#if authors.length}
+				<div class="article-authors">
+					{#each authors as author}
+						<a class="article-author" href={`${base}/tym/${author.slug}`}>
+							<img src={`${base}${author.avatarFilePath}`} alt="" aria-hidden="true" />
+							<span>{getTeamMemberDisplayName(author)}</span>
+						</a>
+					{/each}
+				</div>
 			{/if}
 		</header>
 
@@ -175,6 +180,13 @@
 		font-weight: 700;
 	}
 
+	.article-authors {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		margin-top: 0.5rem;
+	}
+
 	.article-author:hover {
 		color: #be1522;
 	}
@@ -200,6 +212,7 @@
 		margin: 0;
 		font-size: 0.96rem;
 		line-height: 1.68;
+		font-family: 'Montserrat', sans-serif;
 	}
 
 	.article-body :global(ul),
@@ -208,10 +221,16 @@
 		padding-left: 1.4rem;
 		font-size: 0.96rem;
 		line-height: 1.68;
+		font-family: 'Montserrat', sans-serif;
 	}
 
 	.article-body :global(li) {
 		margin: 0.25rem 0;
+	}
+
+	.article-body :global(p *),
+	.article-body :global(li *) {
+		font-family: inherit !important;
 	}
 
 	.article-body :global(h2) {
