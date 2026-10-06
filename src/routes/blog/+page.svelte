@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<meta name="keywords" content="blog Poděbrady, Žijeme pro Poděbrady, komunální politika, Poděbrady" />
+	<meta name="keywords" content="blog Poděbrady, Žijeme pro Poděbrady, komunální politika, Poděbrady, strategické plánování, územní plánování, rozvoj města, městská zeleň, dostupné bydlení, Žižkov, lázeňství, kongresový dům" />
 	<title>Blog | Žijeme pro Poděbrady</title>
 	<meta
 		name="description"

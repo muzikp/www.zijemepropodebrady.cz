@@ -43,7 +43,10 @@
 </script>
 
 <svelte:head>
-	<meta name="keywords" content="blog Poděbrady, Žijeme pro Poděbrady, komunální politika, Poděbrady" />
+	<meta
+		name="keywords"
+		content={['blog Poděbrady', 'Žijeme pro Poděbrady', 'komunální politika', 'Poděbrady', ...(data.post.keywords || [data.post.title])].join(', ')}
+	/>
 	<title>{data.post.title} | Blog</title>
 	<meta name="description" content={data.post.title} />
 	<link rel="icon" type="image/png" href="{base}/favicon.png" />
