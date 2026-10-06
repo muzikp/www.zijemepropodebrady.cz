@@ -68,12 +68,29 @@
 						</a>
 					{/each}
 				</div>
+			{:else if data.post.authorDisplayName}
+				<p class="article-author">{data.post.authorDisplayName}</p>
 			{/if}
 		</header>
 
 		<div class="article-body">
 			{@html data.post.textHtml}
 		</div>
+
+		{#if data.post.attachments?.length}
+			<section class="article-attachments" aria-label="Přílohy k článku">
+				<h2>Přílohy</h2>
+				<ul>
+					{#each data.post.attachments as attachment}
+						<li>
+							<a href="{base}/{normalizeAssetPath(attachment.url)}" download>
+								{attachment.title}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
 
 		{#if data.post.gallery?.length}
 			<section class="article-gallery" aria-label="Galerie k článku">
@@ -251,15 +268,41 @@
 		color: #be1522;
 	}
 
+	.article-body :global(.article-video) {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.article-body :global(.article-video iframe) {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border: 0;
+		border-radius: 12px;
+		background: #111;
+	}
+
+	.article-attachments,
 	.article-gallery {
 		display: grid;
 		gap: 1rem;
 	}
 
+	.article-attachments h2,
 	.article-gallery h2 {
 		margin: 0;
 		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
 		font-size: 1.8rem;
+	}
+
+	.article-attachments ul {
+		margin: 0;
+		padding-left: 1.4rem;
+		line-height: 1.6;
+	}
+
+	.article-attachments a {
+		color: #be1522;
 	}
 
 	.gallery-grid {

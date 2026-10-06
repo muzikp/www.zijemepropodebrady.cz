@@ -83,6 +83,8 @@
 									</a>
 								{/each}
 							</div>
+						{:else if post.authorDisplayName}
+							<p class="post-author">{post.authorDisplayName}</p>
 						{/if}
 						<p class="post-excerpt">{createExcerpt(post.textHtml)}</p>
 						<a class="post-link" href="{base}/blog/{post.id}">Číst celý článek</a>
