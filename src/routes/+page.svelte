@@ -147,7 +147,7 @@
 			class="thank-you-modal"
 			role="dialog"
 			aria-modal="true"
-			aria-labelledby="thank-you-title"
+			aria-label="Poděkování za účast ve volbách"
 			tabindex="-1"
 			on:click|stopPropagation
 			on:keydown|stopPropagation
@@ -157,7 +157,6 @@
 			</button>
 			<div class="modal-mark" aria-hidden="true">♥</div>
 			<p class="modal-eyebrow">Děkujeme</p>
-			<h1 id="thank-you-title">Děkujeme, že jste přišli k volbám</h1>
 			<div class="modal-copy">
 				<p>
 					Děkujeme všem, kdo přišli k volbám. Ať jste volili kohokoli, přišli jste rozhodnout o svém městě.
@@ -382,15 +381,6 @@
 		letter-spacing: 0.12em;
 		text-align: center;
 		text-transform: uppercase;
-	}
-
-	.thank-you-modal h1 {
-		max-width: 18ch;
-		margin: 0 auto 1.25rem;
-		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
-		font-size: clamp(1.8rem, 4vw, 2.7rem);
-		line-height: 1.05;
-		text-align: center;
 	}
 
 	.modal-copy {
