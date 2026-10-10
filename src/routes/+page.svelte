@@ -42,6 +42,11 @@
 	let isSubmitting = false;
 	let submitStatus = null; // 'success' or 'error'
 	let submitMessage = '';
+	let isThankYouModalOpen = true;
+
+	function closeThankYouModal() {
+		isThankYouModalOpen = false;
+	}
 
 	async function handleSubmit(event) {
 		event.preventDefault();
@@ -133,6 +138,48 @@
 </svelte:head>
 
 <NavBar />
+
+<svelte:window on:keydown={(event) => event.key === 'Escape' && closeThankYouModal()} />
+
+{#if isThankYouModalOpen}
+	<div class="modal-backdrop" role="presentation" on:click={closeThankYouModal}>
+		<div
+			class="thank-you-modal"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="thank-you-title"
+			tabindex="-1"
+			on:click|stopPropagation
+			on:keydown|stopPropagation
+		>
+			<button class="modal-close" type="button" aria-label="Zavřít" on:click={closeThankYouModal}>
+				<span aria-hidden="true">×</span>
+			</button>
+			<div class="modal-mark" aria-hidden="true">♥</div>
+			<p class="modal-eyebrow">Děkujeme</p>
+			<h1 id="thank-you-title">Děkujeme, že jste přišli k volbám</h1>
+			<div class="modal-copy">
+				<p>
+					Děkujeme všem, kdo přišli k volbám. Ať jste volili kohokoli, přišli jste rozhodnout o svém městě.
+					A to je to nejdůležitější.
+				</p>
+				<p>Děkujeme vám, kteří jste nám dali svůj hlas. Vážíme si každého z nich.</p>
+				<p>
+					Děkujeme za všechny rozhovory v ulicích, u kávy i v komentářích. Za vaše otázky, podněty,
+					kritiku i povzbuzení. Hodně jsme se od vás naučili.
+				</p>
+				<p>
+					A děkujeme celému našemu týmu, rodinám a všem, kdo nám v kampani pomáhali. Bez vás by to nešlo.
+				</p>
+				<p>
+					Teď se čeká na výsledky. Ať dopadnou jakkoli, Poděbrady jsou náš domov a budeme pro ně pracovat dál.
+				</p>
+				<p class="modal-signoff">Žijeme pro Poděbrady 🤍❤️🧡</p>
+			</div>
+			<button class="modal-action" type="button" on:click={closeThankYouModal}>Pokračovat na web</button>
+		</div>
+	</div>
+{/if}
 
 <!-- Hero Section -->
 <section class="hero">
@@ -264,6 +311,131 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		padding: 0 60px;
+	}
+
+	.modal-backdrop {
+		position: fixed;
+		z-index: 1000;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		padding: 1.5rem;
+		background: rgba(25, 28, 31, 0.62);
+		backdrop-filter: blur(5px);
+		animation: modal-fade-in 0.25s ease-out;
+	}
+
+	.thank-you-modal {
+		position: relative;
+		width: min(100%, 660px);
+		max-height: min(720px, calc(100vh - 3rem));
+		overflow-y: auto;
+		padding: 2.75rem clamp(1.5rem, 5vw, 3.5rem) 2.25rem;
+		border: 1px solid rgba(33, 37, 41, 0.12);
+		border-radius: 24px;
+		background: linear-gradient(145deg, #fffdf8 0%, #fff4df 100%);
+		box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+		color: var(--dark-gray-color);
+		animation: modal-slide-in 0.3s ease-out;
+	}
+
+	.modal-close {
+		position: absolute;
+		top: 0.8rem;
+		right: 0.9rem;
+		display: grid;
+		place-items: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border: 0;
+		border-radius: 50%;
+		background: rgba(33, 37, 41, 0.08);
+		color: var(--dark-gray-color);
+		font-size: 1.8rem;
+		line-height: 1;
+		cursor: pointer;
+		transition: background 0.2s ease, transform 0.2s ease;
+	}
+
+	.modal-close:hover {
+		background: rgba(190, 21, 34, 0.14);
+		transform: rotate(90deg);
+	}
+
+	.modal-mark {
+		width: 3.25rem;
+		height: 3.25rem;
+		margin: 0 auto 0.75rem;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		background: #ffb240;
+		color: #be1522;
+		font-size: 1.9rem;
+	}
+
+	.modal-eyebrow {
+		margin: 0 0 0.5rem;
+		color: #8f1019;
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.thank-you-modal h1 {
+		max-width: 18ch;
+		margin: 0 auto 1.25rem;
+		font-family: 'Neutraface Slab Display', 'Montserrat', sans-serif;
+		font-size: clamp(1.8rem, 4vw, 2.7rem);
+		line-height: 1.05;
+		text-align: center;
+	}
+
+	.modal-copy {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.modal-copy p {
+		margin: 0 0 0.85rem;
+	}
+
+	.modal-signoff {
+		margin-top: 1.1rem !important;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.modal-action {
+		display: block;
+		margin: 1.35rem auto 0;
+		padding: 0.8rem 1.35rem;
+		border: 0;
+		border-radius: 999px;
+		background: #be1522;
+		color: white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.98rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: background 0.2s ease, transform 0.2s ease;
+	}
+
+	.modal-action:hover {
+		background: #9a1119;
+		transform: translateY(-2px);
+	}
+
+	@keyframes modal-fade-in {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes modal-slide-in {
+		from { opacity: 0; transform: translateY(18px) scale(0.98); }
+		to { opacity: 1; transform: translateY(0) scale(1); }
 	}
 
 	/* Hero Section */
